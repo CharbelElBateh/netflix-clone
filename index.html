@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="./jquery.js" defer></script>
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+
+    <title>Netflix Clone</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar netflix-navbar navbar-dark">
+        <div class="container-fluid px-3">
+            <section class="left d-flex gap-3">
+                <button type="button" class="navbar-toggler" id="openSidebarButton">
+                    <span class=" fas fa-bars fa-lg text-white">
+                    </span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo.png" alt="Logo">
+                </a>
+            </section>
+
+            <section class="right d-flex gap-3 mx-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="fas fa-search text-white"></span>
+                </button>
+                <div class="dropdown">
+                    <button class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fas fa-ellipsis-h fa-lg text-white"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2"
+                    style="top: 90%; border: none;">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    
+    <!-- Search -->
+    <div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal-dialog">
+          <div class="modal-content custom-modal-content">
+            <div class="modal-body" style="padding: 0;">
+              <form>
+                <div class="input-group d-flex align-items-center justify-content-center gap-3">
+                  <span class="fas fa-search fa-lg text-white">
+                  </span>
+                  <input type="text" class="form-control custom-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Search -->
+
+    <!-- Sidebar -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="sidebar-modal">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="./images/profile.png" alt="Image" width="50" height="50">
+                    <h5 class="sidebar-title ms-2">User</h5>
+                </div>
+                <div class="d-flex align-items-center flex-column">
+                    <span class="fas fa-arrow-left"></span>
+                    <span class="fas fa-arrow-right"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="sidebar-body">
+                <div class="sidebar-header">
+                    <h5 class="sidebar-title">Notifications</h5>
+                    <div class="dropstart">
+                        <button class="" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border: none;">
+                            <span class="fas fa-arrow-right fa-lg text-white"></span>
+                        </button>
+                        <ul class="dropdown-menu notifications dropdown-menu-start" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">Notification 1</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="sidebar-header">
+                    <h5 class="sidebar-title d-flex gap-3"><span class="fas fa-download fa-lg"></span> My Downloads</h5>
+                </div>
+                <hr>
+                <div class="sidebar-body">
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Crime Movies</a></li>
+                        <li><a href="#">Drama Movies</a></li>
+                        <li><a href="#">Independent Movies</a></li>
+                        <li><a href="#">Thriller Movies</a></li>
+                        <li><a href="#">Horror Movies</a></li>
+                        <li><a href="#">Kids & Family Movies</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Romantic Movies</a></li>
+                        <li><a href="#">Comedy Movies</a></li>
+                        <li><a href="#">Music & Musicals</a></li>
+                        <li><a href="#">Sci-Fi & Fantasy</a></li>
+                        <li><a href="#">Action & Adventure Movies</a></li>
+                        <li><a href="#">Award-Winning Films</a></li>
+                        <li><a href="#">Documentaries</a></li>
+                        <li><a href="#">Available for Download</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar-->
+    
+    <!-- Main Section -->
+    <div>
+        <section class="netflix-home">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <video id="videoPlayer" src="./video/video.mp4" autoplay muted loop></video>
+            <div class="title">
+                <h1>After We Collided</h1>
+            </div>
+            <div class="utils">
+                <div class="left">
+                    <button>
+                        <span class="fas fa-play"> </span>
+                         Play
+                    </button>
+                    <button>
+                        <span class="fas fa-plus"> </span>
+                         My List
+                    </button>
+                </div>
+                <div class="right">
+                    <button id="volumeButton">
+                        <span class="fas fa-volume-mute"></span>
+                    </button>
+                    <p>
+                        18+
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Main -->
+    
+    <!-- Slider -->
+    <div class="slider-box">
+        <section class="container-fluid slider">
+            <div>
+                <p class="text-white section-title">Trending</p>
+            </div>
+        </section>
+        <div id="trending" class="carousel slide carousel-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <section>
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                        <img src="./images/trending/9733064af40d5c62e9ece09e601447de.jpg" alt="">
+                    </section>
+                </div>
+                <div class="carousel-item">
+                    <section>
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                        <img src="./images/trending/extraction_netflix_ver2_xlg-960x1422.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#trending" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#trending" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+    </div>
+    <div class="slider-box">
+        <section class="container-fluid slider">
+            <div>
+                <p class="text-white section-title">Top Searches</p>
+            </div>
+        </section>
+        <div id="trending2" class="carousel slide carousel-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <section>
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                        <img src="./images/trending/HvpAUhJ1NF3oueEC4iux2MF6i_3dqSNxQL6JqFPrkY4.webp" alt="">
+                    </section>
+                </div>
+                <div class="carousel-item">
+                    <section>
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                        <img src="./images/trending/netflix-poster-820c9eb02150dd1d7b5bb29836115d5b.webp" alt="">
+                    </section>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#trending2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#trending2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+    </div>
+    <div class="slider-box">
+        <section class="container-fluid slider">
+            <div>
+                <p class="text-white section-title">Top Picks for You</p>
+            </div>
+        </section>
+        <div id="trending3" class="carousel slide carousel-slider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <section>
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                        <img src="./images/trending/elite_poster.jpg" alt="">
+                    </section>
+                </div>
+                <div class="carousel-item">
+                    <section>
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                        <img src="./images/trending/db9iye4-04e0e12f-bda2-4a44-b58a-1b2dc9f9e10d.jpg" alt="">
+                    </section>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#trending3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#trending3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="height: 20px;"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+    </div>
+    <!-- End Slider -->
+    
+</body>
+</html>

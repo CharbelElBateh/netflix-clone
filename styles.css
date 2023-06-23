@@ -1,0 +1,279 @@
+body{
+    background-color: #0c0c0c;
+    overflow-x: hidden;
+    position: relative;
+}
+.netflix-navbar{
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+    transition: background 0.2s linear;
+}
+.netflix-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+.navbar-brand img{
+    width: 100px;
+}
+
+.sidebar-modal {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #141414;
+    transition: left 0.3s ease;
+    z-index: 1050;
+    color: #fff;
+}
+
+.sidebar-modal.open {
+    left: 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.sidebar-title {
+    margin: 0;
+}
+
+.sidebar-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sidebar-close::before {
+    content: '\00d7';
+}
+
+.sidebar-body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+.sidebar-menu li a {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 25px;
+}
+.sidebar-menu li a.active {
+    border-left: 5px solid #E50914;
+    padding: 10px 20px;
+  }
+
+.navbar-toggler {
+    border: none; /* Remove the border */
+    border-radius: 0; /* Remove the border radius */
+}
+.navbar-toggler .navbar-toggler-icon {
+    border: none; /* Remove the default icon border */
+    outline: none; /* Remove the outline on focus */
+    width: 1.5em;
+    height: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    transition: transform 0.3s ease;
+}
+.dropdown>.btn.show{
+    background-color: #343a40 !important;
+}
+.dropdown>.btn:focus{
+    box-shadow: none !important;
+}
+.notifications{
+    background-color: #141414;
+}
+a{
+    color: white !important;
+}
+.sidebar-body{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+hr{
+    margin: 0;
+    position: relative; 
+    border: none; 
+    height: 5px; 
+    background-color: black; 
+    width: 120%; 
+    left: -10%;
+}  
+
+.custom-modal-dialog {
+    background-color: #0c0c0c;
+    max-width: 100%;
+    padding: 0 40%;
+    padding-top: 10px;
+    margin: 0;
+    height: 50px;
+  }
+
+  .custom-modal-content {
+    background-color: #0c0c0c;
+    border: none;
+  }
+
+  .custom-input {
+    background-color: #343a40;
+    color: white;
+  }
+  
+.netflix-home{
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+.netflix-home video{
+    width: 100%;
+}
+.netflix-home .top{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, transparent, black);
+}
+.netflix-home .bottom{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, #0c0c0c);
+}
+.title{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: white;
+}
+.title h1{
+    font-weight: bold;
+    font-size: 40px;
+}
+.utils{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    top: 75%;
+    left: 5%;
+}
+
+.utils .left button{
+    background-color: rgba(52, 58, 64, 0.6);
+    border: none;
+    color: white !important;
+    font-size: smaller;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+.utils .left button:hover{
+    background-color: white;
+    color: black !important;
+}
+.utils .right, .utils .left{
+    display: flex;
+    gap: 10px;
+}
+.utils .right button{
+    background-color: rgba(52, 58, 64, 0.6);
+    color: white;
+    border: 0.5px solid white;
+    border-radius: 20px;  
+}
+.utils .right button:hover{
+    transform: scale(1.1);
+}
+.right p{
+    margin: 0;
+    color: white;
+    background-color: rgba(52, 58, 64, 0.6);
+    border-left: 3px solid white;
+    font-size: 10px;
+    align-self: center;
+    padding: 5px 30px 5px 10px;
+}
+section.container-fluid.slider{
+    padding: 0;
+}
+
+.section-title{
+    font-size: 32px;
+
+}
+.slider-box{
+    margin-left: 20px;
+}
+.carousel-item>section>img{
+    height: auto;
+    width: 12.5%;
+}
+.carousel-item>section{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+  transition: none;
+  opacity: 0.9;
+}
+
+#trending:hover .carousel-control-prev,
+#trending:hover .carousel-control-next,
+#trending2:hover .carousel-control-prev,
+#trending2:hover .carousel-control-next,
+#trending3:hover .carousel-control-prev,
+#trending3:hover .carousel-control-next{
+  display: block;
+  width: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+}
+
